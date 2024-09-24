@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Reimaging Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-check-input {
+            transform: scale(1.5); /* Makes checkboxes larger */
+            margin-right: 10px;
+        }
+        .info-content {
+            display: none; /* Hide content initially */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .info-button {
+            cursor: pointer;
+            margin-left: 10px;
+            background: silver;
+            padding:0px 10px;
+            border-radius: 10px;
+            color:#fff;
+        }
+        .font-control {
+            cursor: pointer;
+            margin: 5px;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div>
+            <button class="font-control" onclick="changeFontSize(-1)">-</button>
+            <button class="font-control" onclick="changeFontSize(1)">+</button>
+        </div>
+        <h2>Comprehensive Guide for Reimaging a Computer</h2>
+<ul class="list-group" id="content">
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Create a Service Ticket (if not already done by the customer)
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Open a ticket with the necessary details. Add the Drop-Off information (visible only internally) and the computer's name. Note any software installation requirements. Ensure that all important files or data are backed up before proceeding with reimaging.
+        </div>
+    </li>
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Optional Step: Verify Computer in SnipeIT Inventory
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Check if the computer is added to SnipeIT for asset management purposes. If not, consider adding it.
+        </div>
+    </li>
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Verify Compatibility with Windows 11
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Ensure the computer meets the Windows 11 system requirements: TPM 2.0, 8th generation processor or higher, 256 GB of storage, and 8 GB of RAM.
+        </div>
+    </li>
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Remove the Computer from SCCM
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Provide the computer name or service tag to a senior IT member or the IT Lead. Ensure the computer is removed from SCCM before proceeding with the reimaging process.
+        </div>
+    </li>
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Installation Preparation
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Plug the computer into a power source, connect it to a VLAN using a USB-Ethernet dongle, and insert the SCCM USB key into the computer.
+        </div>
+    </li>
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Installation Process
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Boot the computer from the USB key (F12) and follow the instructions to complete the installation. Remove the USB key when prompted, enter the serial number manually, select the appropriate department, and add the prefix (ST-, CH-, AD-).
+        </div>
+    </li>
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Installation Troubleshooting
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Common errors during installation include SCCM-related conflicts or BitLocker issues. If you encounter errors, follow the troubleshooting steps to resolve them.
+        </div>
+    </li>
 
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Add Site Administrator as an Admin User
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Log into the computer, open "Computer Management," and add a new user with the username `siteadmin` and password `Etudiant`. Uncheck "User must change password at next logon" and check "User cannot change password" and "Password never expires." Then add `siteadmin` to the Administrators group.
+            Add the computer owner as an admin if they are a professor or PhD student. Do not add staff members without supervisor confirmation.
+        </div>
+    </li>
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Install System and Software Updates
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Log in as `siteadmin`, run Dell Command Update, and install any available firmware and software updates. Run Windows Update and install all available updates. Disable MAC Passthrough in BIOS settings.
+        </div>
+    </li>
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Notify the Client for Pickup
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            Update the ticket and include the booking link to notify the client that the computer is ready for pickup. Confirm if the client requires any additional software installations before the handover.
+        </div>
+    </li>
+    <li class="list-group-item">
+        <input type="checkbox" class="form-check-input">
+        Final Handover to the Client
+        <span class="info-button" onclick="toggleInfo(this)">?</span>
+        <div class="info-content">
+            At the front desk, connect the computer to the network using a USB Ethernet dongle. Ask the client to log in with their credentials. Verify that the client has appropriate admin rights, if needed, for professors or PhD students.
+        </div>
+    </li>
+</ul>
+<div class="progress mt-3">
+    <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+</div>
+
+<script>
+    function toggleInfo(element) {
+        const infoContent = element.nextElementSibling;
+        if (infoContent.style.display === 'block') {
+            infoContent.style.display = 'none';
+        } else {
+            infoContent.style.display = 'block';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const progressBar = document.querySelector('.progress-bar');
+
+        function updateProgress() {
+            const totalItems = checkboxes.length;
+            const checkedItems = Array.from(checkboxes).filter(i => i.checked).length;
+            const percentage = (checkedItems / totalItems) * 100;
+
+            progressBar.style.width = `${percentage}%`;
+            progressBar.setAttribute('aria-valuenow', percentage);
+            progressBar.textContent = `${percentage.toFixed(0)}%`;
+        }
+
+        checkboxes.forEach(box => {
+            box.addEventListener('change', () => {
+                updateProgress();
+            });
+        });
+
+        // Initialize progress bar on page load
+        updateProgress();
+    });
+
+    let currentSize = 16; // Start with default font size of 16px
+    function changeFontSize(factor) {
+        const content = document.getElementById('content');
+        currentSize += factor;
+        content.style.fontSize = `${currentSize}px`;
+    }
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,ht,fr', // English, Haitian Creole, and French
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
