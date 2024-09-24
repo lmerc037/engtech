@@ -43,96 +43,178 @@
         </div>
         <h2>Comprehensive Guide for Reimaging a Computer</h2>
 <ul class="list-group" id="content">
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Create a Service Ticket (if not already done by the customer)
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Open a ticket with the necessary details. Add the Drop-Off information (visible only internally) and the computer's name. Note any software installation requirements. Ensure that all important files or data are backed up before proceeding with reimaging.
-        </div>
-    </li>
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Optional Step: Verify Computer in SnipeIT Inventory
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Check if the computer is added to SnipeIT for asset management purposes. If not, consider adding it.
-        </div>
-    </li>
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Verify Compatibility with Windows 11
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Ensure the computer meets the Windows 11 system requirements: TPM 2.0, 8th generation processor or higher, 256 GB of storage, and 8 GB of RAM.
-        </div>
-    </li>
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Remove the Computer from SCCM
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Provide the computer name or service tag to a senior IT member or the IT Lead. Ensure the computer is removed from SCCM before proceeding with the reimaging process.
-        </div>
-    </li>
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Installation Preparation
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Plug the computer into a power source, connect it to a VLAN using a USB-Ethernet dongle, and insert the SCCM USB key into the computer.
-        </div>
-    </li>
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Installation Process
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Boot the computer from the USB key (F12) and follow the instructions to complete the installation. Remove the USB key when prompted, enter the serial number manually, select the appropriate department, and add the prefix (ST-, CH-, AD-).
-        </div>
-    </li>
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Installation Troubleshooting
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Common errors during installation include SCCM-related conflicts or BitLocker issues. If you encounter errors, follow the troubleshooting steps to resolve them.
-        </div>
-    </li>
+   Here is the requested `<li>` formatted list with all the detailed information:
 
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Add Site Administrator as an Admin User
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Log into the computer, open "Computer Management," and add a new user with the username `siteadmin` and password `Etudiant`. Uncheck "User must change password at next logon" and check "User cannot change password" and "Password never expires." Then add `siteadmin` to the Administrators group.
-            Add the computer owner as an admin if they are a professor or PhD student. Do not add staff members without supervisor confirmation.
-        </div>
-    </li>
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Install System and Software Updates
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Log in as `siteadmin`, run Dell Command Update, and install any available firmware and software updates. Run Windows Update and install all available updates. Disable MAC Passthrough in BIOS settings.
-        </div>
-    </li>
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Notify the Client for Pickup
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            Update the ticket and include the booking link to notify the client that the computer is ready for pickup. Confirm if the client requires any additional software installations before the handover.
-        </div>
-    </li>
-    <li class="list-group-item">
-        <input type="checkbox" class="form-check-input">
-        Final Handover to the Client
-        <span class="info-button" onclick="toggleInfo(this)">?</span>
-        <div class="info-content">
-            At the front desk, connect the computer to the network using a USB Ethernet dongle. Ask the client to log in with their credentials. Verify that the client has appropriate admin rights, if needed, for professors or PhD students.
-        </div>
-    </li>
+```html
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Create a Service Ticket (if not already done by the customer)
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        <ul>
+            <li>Open a ticket with the necessary details.</li>
+            <li>Add the Drop-Off information (visible only internally) and the computer's name.</li>
+            <li>Note any software installation requirements specified by the customer.</li>
+            <li>Ensure that all important files or data are backed up before proceeding with reimaging.</li>
+        </ul>
+    </div>
+</li>
+
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Optional Step: Verify Computer in SnipeIT Inventory
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        Check if the computer is added to SnipeIT for asset management purposes. If not, consider adding it.
+    </div>
+</li>
+
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Verify Compatibility with Windows 11
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        Ensure the computer meets Windows 11 system requirements:
+        <ul>
+            <li><strong>TPM 2.0:</strong> Press <code>Windows Key + R</code>, type <code>tpm.msc</code> to check for TPM 2.0.</li>
+            <li><strong>Processor:</strong> Must be 8th generation or higher. Use the command: <code>wmic cpu get name</code> in Command Prompt to verify.</li>
+            <li><strong>Hard Drive:</strong> At least 256 GB of storage space.</li>
+            <li><strong>RAM:</strong> Minimum of 8 GB.</li>
+        </ul>
+    </div>
+</li>
+
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Remove Computer from SCCM
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        <ul>
+            <li>Provide the computer name or service tag to a senior IT member or the IT Lead before proceeding with the installation.</li>
+            <li>Ensure the computer is removed from SCCM (System Center Configuration Manager) to avoid conflicts during reimaging.</li>
+        </ul>
+    </div>
+</li>
+
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Installation Preparation
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        Before starting the installation process, make sure to:
+        <ul>
+            <li>Plug the computer into a power source (especially for laptops).</li>
+            <li>Connect the computer to a VLAN using a USB-Ethernet adapter.</li>
+            <li>Insert the SCCM USB key into the computer.</li>
+        </ul>
+    </div>
+</li>
+
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Installation Process
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        <ol>
+            <li>Boot the computer with the USB key by pressing <code>F12</code> during startup and selecting the USB device (Enter BIOS password: <code>Des####*1</code>).</li>
+            <li><strong>Optional:</strong> Ensure the computer has a valid IP address:
+                <ul>
+                    <li>Press <code>F8</code> to open the Command Prompt.</li>
+                    <li>Type <code>ipconfig/all</code>, and verify the IP starts with <code>10.137.x.x</code>. Close the Command Prompt when done.</li>
+                </ul>
+            </li>
+            <li>Click “Next” and select “Production,” then click “Run.”</li>
+            <li>When prompted, remove the SCCM USB key, then click “OK.”</li>
+            <li>Upon restart, check the option for “Manually enter serial number.”</li>
+            <li>Choose the appropriate department for the computer.</li>
+            <li>Add the correct prefix (e.g., <code>ST-</code>, <code>CH-</code>, <code>AD-</code>) to the computer name.</li>
+            <li>Confirm your selections and wait for the installation to complete.</li>
+        </ol>
+
+        <strong>Installation Troubleshooting:</strong>
+        <ul>
+            <li><strong>Error:</strong> "There are no task sequences available..."
+                <ul>
+                    <li><strong>Cause:</strong> The computer may already exist in SCCM.</li>
+                    <li><strong>Solution:</strong> Request its removal from SCCM.</li>
+                </ul>
+            </li>
+            <li><strong>Error:</strong> "Task sequence has failed with error code 0x800700A1" (or similar errors)
+                <ul>
+                    <li><strong>Cause:</strong> The computer has a BitLocker encrypted partition.</li>
+                    <li><strong>Solution:</strong> Run the following script to format the partition:
+                        <code>diskpart /s D:\scripts\fmt.txt</code> (Ensure <code>D:</code> is the correct drive by typing <code>Dir</code> after selecting the drive.)
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</li>
+
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Add Site Administrator as an Admin User
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        <ol>
+            <li>Log into the computer with your credentials.</li>
+            <li>In the search bar, type “Computer Management.”</li>
+            <li>Navigate to the "Users" section:
+                <ul>
+                    <li>Right-click and add a new user: <code>siteadmin</code>.</li>
+                    <li>Set the password to <code>Etudiant</code>. Uncheck “User must change password at next logon,” and check “User cannot change password” and “Password never expires.”</li>
+                    <li>Click “Create.”</li>
+                </ul>
+            </li>
+            <li>In the "Groups" section:
+                <ul>
+                    <li>Select “Administrators,” then click “Add.”</li>
+                    <li>Enter the username <code>siteadmin</code>, check the name, and confirm.</li>
+                </ul>
+            </li>
+            <li>If the computer belongs to a professor or a PhD student, add them as an administrator. Confirm with your supervisor if a staff member requests admin access, as they typically cannot be given these rights.</li>
+        </ol>
+    </div>
+</li>
+
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Install System and Software Updates
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        <ol>
+            <li>Log off from your account and log in as <code>siteadmin</code>.</li>
+            <li>Run <strong>Dell Command Update</strong> to install any available firmware and hardware updates.</li>
+            <li>Run <strong>Windows Update</strong> and install all necessary software updates.</li>
+            <li><strong>Important:</strong> Disable <strong>MAC Address Passthrough</strong> in BIOS settings to prevent network conflicts.</li>
+        </ol>
+    </div>
+</li>
+
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Notify the Client for Pickup
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        Update the service ticket with a link to your booking system to notify the client that their computer is ready for pickup. Offer to install any additional software the client might need (from the available software offerings) before they pick up the device.
+    </div>
+</li>
+
+<li class="list-group-item">
+    <input type="checkbox" class="form-check-input">
+    Final Handover to the Client
+    <span class="info-button" onclick="toggleInfo(this)">?</span>
+    <div class="info-content">
+        <ol>
+            <li>At the front desk, connect the computer to the network using a USB Ethernet dongle.</li>
+            <li>Have the client log in using their employee credentials.</li>
+            <li>If the client requires administrative rights (e.g., professor, PhD student), confirm that they have the necessary permissions. Ensure staff members are not granted admin rights unless approved by a supervisor.</li>
+        </ol>
+    </div>
+</li>
+```
+
+This format includes all the detailed steps and explanations requested in the formatted `<li>` tags. Let me know if further adjustments are needed!
 </ul>
 <div class="progress mt-3">
     <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
