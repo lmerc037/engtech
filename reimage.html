@@ -51,9 +51,9 @@
     <div class="info-content">
         <ul>
             <li>Open a ticket with the necessary details.</li>
-            <li>Add the Drop-Off information (visible only internally) and the computer's name.</li>
+            <li>Add the Drop-Off information (invisible to caller) and the computer's name.</li>
             <li>Note any software installation requirements specified by the customer.</li>
-            <li>Ensure that all important files or data are backed up before proceeding with reimaging.</li>
+            <li>Ensure that all important files or data are backed up or the client give the go before proceeding with reimaging.</li>
         </ul>
     </div>
 </li>
@@ -63,7 +63,7 @@
     Optional Step: Verify Computer in SnipeIT Inventory
     <span class="info-button" onclick="toggleInfo(this)">?</span>
     <div class="info-content">
-        Check if the computer is added to SnipeIT for asset management purposes. If not, consider adding it.
+        Check if the computer has been added to SnipeIT. If not, consider adding it.
     </div>
 </li>
 
@@ -72,7 +72,7 @@
     Verify Compatibility with Windows 11
     <span class="info-button" onclick="toggleInfo(this)">?</span>
     <div class="info-content">
-        Ensure the computer meets Windows 11 system requirements:
+        Ensure the computer meets Windows 11 system requirements, it's not damage or too old
         <ul>
             <li><strong>TPM 2.0:</strong> Press <code>Windows Key + R</code>, type <code>tpm.msc</code> to check for TPM 2.0.</li>
             <li><strong>Processor:</strong> Must be 8th generation or higher. Use the command: <code>wmic cpu get name</code> in Command Prompt to verify.</li>
@@ -121,7 +121,7 @@
                     <li>Type <code>ipconfig/all</code>, and verify the IP starts with <code>10.137.x.x</code>. Close the Command Prompt when done.</li>
                 </ul>
             </li>
-            <li>Click “Next” and select “Production,” then click “Run.”</li>
+            <li>Click “Next” and select “Production,” then click “Run.” If any error occur, refer to Installation Troubleshooting below </li>
             <li>When prompted, remove the SCCM USB key, then click “OK.”</li>
             <li>Upon restart, check the option for “Manually enter serial number.”</li>
             <li>Choose the appropriate department for the computer.</li>
@@ -141,7 +141,7 @@
                 <ul>
                     <li><strong>Cause:</strong> The computer has a BitLocker encrypted partition.</li>
                     <li><strong>Solution:</strong> Run the following script to format the partition:
-                        <code>diskpart /s D:\scripts\fmt.txt</code> (Ensure <code>D:</code> is the correct drive by typing <code>Dir</code> after selecting the drive.)
+                        <code>diskpart /s D:\scripts\fmt.txt</code> (Ensure <code>D:</code> is the correct drive by typing <code>Dir</code> after selecting the drive. Should not be empty)
                     </li>
                 </ul>
             </li>
@@ -151,7 +151,7 @@
 
 <li class="list-group-item">
     <input type="checkbox" class="form-check-input">
-    Add Site Administrator as an Admin User
+    Add siteadmin as an Admin User
     <span class="info-button" onclick="toggleInfo(this)">?</span>
     <div class="info-content">
         <ol>
@@ -184,7 +184,7 @@
             <li>Log off from your account and log in as <code>siteadmin</code>.</li>
             <li>Run <strong>Dell Command Update</strong> to install any available firmware and hardware updates.</li>
             <li>Run <strong>Windows Update</strong> and install all necessary software updates.</li>
-            <li><strong>Important:</strong> Disable <strong>MAC Address Passthrough</strong> in BIOS settings to prevent network conflicts.</li>
+            <li><strong>Important:</strong> Disable <strong>MAC Address Passthrough</strong> in BIOS settings, if no network connection after rebooting while installing the updates.</li>
         </ol>
     </div>
 </li>
